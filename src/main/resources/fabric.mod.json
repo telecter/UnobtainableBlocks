@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "unobtainableblocks",
-	"version": "${version}",
+	"version": "1.0.2",
 	"name": "UnobtainableBlocks",
 	"description": "Adds items for...unobtainable blocks.",
 	"authors": [
@@ -19,9 +19,6 @@
 			"xyz.telecter.unobtainableblocks.UnobtainableBlocks"
 		]
 	},
-	"mixins": [
-		"unobtainableblocks.mixins.json"
-	],
 	"depends": {
 		"fabricloader": ">=0.16.12",
 		"minecraft": "~1.21.5",
