@@ -6,7 +6,9 @@
 ## Items Added
 * Nether Portal
 * End Portal
+* End Gateway
 * Fire
+* Soul Fire
 * Water
 * Lava
 
