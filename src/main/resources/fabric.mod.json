@@ -1,28 +1,24 @@
 {
-	"schemaVersion": 1,
-	"id": "unobtainableblocks",
-	"version": "1.0.2",
-	"name": "UnobtainableBlocks",
-	"description": "Adds items for...unobtainable blocks.",
-	"authors": [
-		"telecter"
-	],
-	"contact": {
-		"homepage": "https://modrinth.com/mod/unobtainable-blocks",
-		"sources": "https://github.com/telecter/UnobtainableBlocks"
-	},
-	"license": "MIT",
-	"icon": "assets/unobtainableblocks/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"xyz.telecter.unobtainableblocks.UnobtainableBlocks"
-		]
-	},
-	"depends": {
-		"fabricloader": ">=0.16.12",
-		"minecraft": ["1.21.5", "1.21.6", "1.21.7"],
-		"java": ">=21",
-		"fabric-api": "*"
-	}
+  "schemaVersion": 1,
+  "id": "unobtainableblocks",
+  "version": "1.3.0",
+  "name": "UnobtainableBlocks",
+  "description": "Adds items for...unobtainable blocks.",
+  "authors": ["telecter"],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/unobtainable-blocks",
+    "sources": "https://github.com/telecter/UnobtainableBlocks"
+  },
+  "license": "MIT",
+  "icon": "assets/unobtainableblocks/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["xyz.telecter.unobtainableblocks.UnobtainableBlocks"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.12",
+    "minecraft": ">=1.21.5",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
 }

@@ -1,7 +1,9 @@
 {
   "item.unobtainableblocks.nether_portal": "Nether Portal",
   "item.unobtainableblocks.end_portal": "End Portal",
+  "item.unobtainableblocks.end_gateway": "End Gateway",
   "item.unobtainableblocks.fire": "Fire",
+  "item.unobtainableblocks.soul_fire": "Soul Fire",
   "item.unobtainableblocks.lava": "Lava",
   "item.unobtainableblocks.water": "Water"
 }
