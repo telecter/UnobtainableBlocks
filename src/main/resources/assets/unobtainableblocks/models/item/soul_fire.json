@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "unobtainableblocks:item/soul_fire"
+    "layer0": "minecraft:block/soul_fire_0"
   }
 }

@@ -1,13 +1,14 @@
 {
   "schemaVersion": 1,
   "id": "unobtainableblocks",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "name": "UnobtainableBlocks",
   "description": "Adds items for...unobtainable blocks.",
   "authors": ["telecter"],
   "contact": {
     "homepage": "https://modrinth.com/mod/unobtainable-blocks",
-    "sources": "https://github.com/telecter/UnobtainableBlocks"
+    "sources": "https://github.com/telecter/UnobtainableBlocks",
+    "issues": "https://github.com/telecter/UnobtainableBlocks/issues"
   },
   "license": "MIT",
   "icon": "assets/unobtainableblocks/icon.png",

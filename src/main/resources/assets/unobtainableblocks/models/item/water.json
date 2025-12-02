@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "unobtainableblocks:item/water"
+    "layer0": "unobtainableblocks:item/water_still"
   }
 }

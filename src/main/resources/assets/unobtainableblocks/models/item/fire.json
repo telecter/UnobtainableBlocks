@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "unobtainableblocks:item/fire"
+    "layer0": "minecraft:block/fire_0"
   }
 }
