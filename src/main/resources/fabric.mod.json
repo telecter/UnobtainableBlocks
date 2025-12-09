@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "unobtainableblocks",
-  "version": "1.4.0",
+  "version": "1.4.0+mc1.21.5",
   "name": "UnobtainableBlocks",
   "description": "Adds items for...unobtainable blocks.",
   "authors": ["telecter"],
@@ -18,7 +18,7 @@
   },
   "depends": {
     "fabricloader": ">=0.16.12",
-    "minecraft": "~1.21.11",
+    "minecraft": "~1.21.5",
     "java": ">=21",
     "fabric-api": "*"
   }
