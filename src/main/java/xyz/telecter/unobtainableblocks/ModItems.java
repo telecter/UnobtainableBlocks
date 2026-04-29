@@ -1,65 +1,61 @@
 package xyz.telecter.unobtainableblocks;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.Items;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.Rarity;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.function.Function;
 
 public class ModItems {
         public static void initialize() {
-                ItemGroupEvents.modifyEntriesEvent(ItemGroups.OPERATOR)
+                CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.OP_BLOCKS)
                                 .register((itemGroup) -> {
-                                        itemGroup.add(NETHER_PORTAL_ITEM);
-                                        itemGroup.add(END_PORTAL_ITEM);
-                                        itemGroup.add(END_GATEWAY_ITEM);
-                                        itemGroup.add(WATER_ITEM);
-                                        itemGroup.add(FIRE_ITEM);
-                                        itemGroup.add(SOUL_FIRE_ITEM);
-                                        itemGroup.add(LAVA_ITEM);
+                                        itemGroup.accept(NETHER_PORTAL_ITEM);
+                                        itemGroup.accept(END_PORTAL_ITEM);
+                                        itemGroup.accept(END_GATEWAY_ITEM);
+                                        itemGroup.accept(WATER_ITEM);
+                                        itemGroup.accept(FIRE_ITEM);
+                                        itemGroup.accept(SOUL_FIRE_ITEM);
+                                        itemGroup.accept(LAVA_ITEM);
                                 });
-                ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS)
+                CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS)
                                 .register((itemGroup) -> {
-                                        itemGroup.add(Items.PETRIFIED_OAK_SLAB);
+                                        itemGroup.accept(Items.PETRIFIED_OAK_SLAB);
                                 });
         }
 
-        public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
-                RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM,
-                                Identifier.of(UnobtainableBlocks.MOD_ID, name));
-                Item item = itemFactory.apply(settings.registryKey(itemKey));
-                Registry.register(Registries.ITEM, itemKey, item);
+        public static Item register(String name, Function<Item.Properties, Item> itemFactory, Item.Properties settings) {
+                ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM,
+                                Identifier.fromNamespaceAndPath(UnobtainableBlocks.MOD_ID, name));
+                Item item = itemFactory.apply(settings.setId(itemKey));
+                Registry.register(BuiltInRegistries.ITEM, itemKey, item);
                 return item;
         }
 
         public static final Item NETHER_PORTAL_ITEM = register("nether_portal",
-                        (settings) -> new BlockItem(Blocks.NETHER_PORTAL, settings), new Item.Settings()
+                        (settings) -> new BlockItem(Blocks.NETHER_PORTAL, settings), new Item.Properties()
                                         .rarity(Rarity.EPIC));
         public static final Item END_PORTAL_ITEM = register("end_portal",
-                        (settings) -> new BlockItem(Blocks.END_PORTAL, settings), new Item.Settings()
+                        (settings) -> new BlockItem(Blocks.END_PORTAL, settings), new Item.Properties()
                                         .rarity(Rarity.EPIC));
         public static final Item END_GATEWAY_ITEM = register("end_gateway",
-                        (settings) -> new BlockItem(Blocks.END_GATEWAY, settings), new Item.Settings()
+                        (settings) -> new BlockItem(Blocks.END_GATEWAY, settings), new Item.Properties()
                                         .rarity(Rarity.EPIC));
         public static final Item FIRE_ITEM = register("fire", (settings) -> new BlockItem(Blocks.FIRE, settings),
-                        new Item.Settings()
+                        new Item.Properties()
                                         .rarity(Rarity.EPIC));
         public static final Item SOUL_FIRE_ITEM = register("soul_fire",
-                        (settings) -> new BlockItem(Blocks.SOUL_FIRE, settings), new Item.Settings()
+                        (settings) -> new BlockItem(Blocks.SOUL_FIRE, settings), new Item.Properties()
                                         .rarity(Rarity.EPIC));
         public static final Item WATER_ITEM = register("water", (settings) -> new BlockItem(Blocks.WATER, settings),
-                        new Item.Settings()
+                        new Item.Properties()
                                         .rarity(Rarity.EPIC));
         public static final Item LAVA_ITEM = register("lava", (settings) -> new BlockItem(Blocks.LAVA, settings),
-                        new Item.Settings()
+                        new Item.Properties()
                                         .rarity(Rarity.EPIC));
 }

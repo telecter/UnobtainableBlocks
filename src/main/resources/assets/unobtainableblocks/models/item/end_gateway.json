@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "layer0": "unobtainableblocks:item/end_portal"
+    "all": "unobtainableblocks:item/end_portal"
   }
 }
